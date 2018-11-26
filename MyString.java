@@ -10,7 +10,11 @@ public class MyString implements CharSequence,Comparable<CharSequence>{
     return data[index];
   }
   public CharSequence subSequence(int start, int end){
-    return "";
+    String s = "";
+    for(int i=start;i<end-start;i++){
+      s+=charAt(i);
+    }
+    return s;
   }
   public int length(){
     return data.length;
@@ -25,7 +29,7 @@ public class MyString implements CharSequence,Comparable<CharSequence>{
 
     // sole constructor test
     MyString msg = new MyString("droid");
-    System.out.println("MyString msg = new MyString(\"charlotte\")");
+    System.out.println("MyString msg = new MyString(\"droid\")");
 
     // toString()
     System.out.println("msg: " + msg);                                                  // "droid"
