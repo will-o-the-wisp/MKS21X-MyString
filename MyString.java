@@ -7,16 +7,19 @@ public class MyString implements CharSequence,Comparable<CharSequence>{
      }
   }
   public char charAt(int index){
-    return ' ';
+    return data[index];
   }
   public CharSequence subSequence(int start, int end){
     return "";
   }
   public int length(){
-    return 0;
+    return data.length;
   }
   public int compareTo(CharSequence s){
     return 0;
+  }
+  public String toString(){
+    return "";
   }
   public static void main(String[] args) {
 
