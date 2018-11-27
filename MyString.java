@@ -20,10 +20,22 @@ public class MyString implements CharSequence,Comparable<CharSequence>{
     return data.length;
   }
   public int compareTo(CharSequence s){
-    return 0;
+    for(int i=0;i<Math.min(this.length(),s.length());i++){
+      if(this.charAt(i)<s.charAt(i)){
+        return -1;
+      }
+      else if(this.charAt(i)>s.charAt(i)){
+        return 1;
+      }
+    }
+    return this.length()-s.length();
   }
   public String toString(){
-    return "";
+    String s = "";
+    for(int i=0;i<length();i++){
+      s+=charAt(i);
+    }
+    return s;
   }
   public static void main(String[] args) {
 
