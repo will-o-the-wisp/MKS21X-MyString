@@ -7,9 +7,15 @@ public class MyString implements CharSequence,Comparable<CharSequence>{
      }
   }
   public char charAt(int index){
+    if(index < 0 || index >= length()){
+      throw new IndexOutOfBoundsException("index out of bounds");
+    }
     return data[index];
   }
   public CharSequence subSequence(int start, int end){
+    if(start < 0 || end < 0 || end > length() || start > end){
+      throw new IndexOutOfBoundsException("index out of bounds");
+    }
     String s = "";
     for(int i=start;i<end-start;i++){
       s+=charAt(i);
@@ -20,6 +26,9 @@ public class MyString implements CharSequence,Comparable<CharSequence>{
     return data.length;
   }
   public int compareTo(CharSequence s){
+    if(s == null){
+      throw new NullPointerException("cannot compare to null");
+    }
     for(int i=0;i<Math.min(this.length(),s.length());i++){
       if(this.charAt(i)<s.charAt(i)){
         return -1;
